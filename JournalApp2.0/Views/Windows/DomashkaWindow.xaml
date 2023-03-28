@@ -13,22 +13,22 @@
     <Grid>
         <StackPanel>
             <Label Content="Сторона a"/>
-            <TextBox/>
-            <Label Content="Сторона b"/>
-            <TextBox/>
+            <TextBox x:Name="TextBoxA" Text="{Binding A, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Сторона b" />
+            <TextBox x:Name="TextBoxB" Text="{Binding B, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Content="Сторона c"/>
-            <TextBox/>
+            <TextBox x:Name="TextBoxC" Text="{Binding C, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Content="Сторона d"/>
-            <TextBox/>
+            <TextBox x:Name="TextBoxD" Text="{Binding D, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Content="Сторона e"/>
-            <TextBox/>
+            <TextBox x:Name="TextBoxE" Text="{Binding E, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Content="Сторона f"/>
-            <TextBox/>
+            <TextBox x:Name="TextBoxF" Text="{Binding F, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Content="Сторона g"/>
-            <TextBox/>
-            <Label Content="Площадь"/>
-            <TextBox/>
-
+            <TextBox x:Name="TextBoxG" Text="{Binding G, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Площадь:"/>
+            <Label Content="{Binding S}"/>
+            <Button Content="Click" Command="{Binding ResultCommand}"/>
         </StackPanel>
     </Grid>
 </Window>

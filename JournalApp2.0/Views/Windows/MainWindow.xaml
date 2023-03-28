@@ -10,7 +10,10 @@
         <vm:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-        <Button Content="Выход" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding CloseApplicationCommand}"/>
+        <StackPanel>
+            <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Button Content="Выход" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding CloseApplicationCommand}"/>
+            <Button Content="Домашка" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding SwithToSecondWindowComand}"/>
+        </StackPanel>
     </Grid>
 </Window>

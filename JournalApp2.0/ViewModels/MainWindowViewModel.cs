@@ -8,7 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media.Animation;
 using JournalApp2._0.Infrastructure.Commands;
 using JournalApp2._0.ViewModels.Base;
-
+using JournalApp2._0.Views.Windows;
 
 namespace JournalApp2._0.ViewModels
 {
@@ -38,6 +38,30 @@ namespace JournalApp2._0.ViewModels
         private bool CanCloseApplicationCommandExecuted(object p) => true;
         #endregion
 
+        #region SwithToSecondWindowComand
+
+        public ICommand SwithToSecondWindowComand { get; }
+
+
+        private void OnSwithToSecondWindowComandExecuted(object p)
+        {
+            var domashkaWindow = new DomashkaWindow();
+
+            domashkaWindow.Show();
+
+            var window = Application.Current.Windows[0];
+            if (window != null)
+            {
+                window.Close();
+            }
+        }
+
+
+        private bool CanSwithToSecondWindowComandExecuted(object p) => true;
+
+
+        #endregion
+
         #endregion
 
         public MainWindowViewModel()
@@ -45,6 +69,7 @@ namespace JournalApp2._0.ViewModels
             #region Команды
 
             CloseApplicationCommand = new LambdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecuted);
+            SwithToSecondWindowComand = new LambdaCommand(OnSwithToSecondWindowComandExecuted, CanSwithToSecondWindowComandExecuted);
 
             #endregion
 
