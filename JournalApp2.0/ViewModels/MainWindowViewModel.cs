@@ -62,6 +62,30 @@ namespace JournalApp2._0.ViewModels
 
         #endregion
 
+        #region SwithToDsWindowComand
+
+        public ICommand SwithToDsWindowComand { get; }
+
+
+        private void OnSwithToDsWindowComandExecuted(object p)
+        {
+            var dsWindow = new DsWindow();
+
+            dsWindow.Show();
+
+            var window = Application.Current.Windows[0];
+            if (window != null)
+            {
+                window.Close();
+            }
+        }
+
+
+        private bool CanSwithToDsWindowComandExecuted(object p) => true;
+
+
+        #endregion
+
         #endregion
 
         public MainWindowViewModel()
@@ -70,6 +94,7 @@ namespace JournalApp2._0.ViewModels
 
             CloseApplicationCommand = new LambdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecuted);
             SwithToSecondWindowComand = new LambdaCommand(OnSwithToSecondWindowComandExecuted, CanSwithToSecondWindowComandExecuted);
+            SwithToDsWindowComand = new LambdaCommand(OnSwithToDsWindowComandExecuted, CanSwithToDsWindowComandExecuted);
 
             #endregion
 

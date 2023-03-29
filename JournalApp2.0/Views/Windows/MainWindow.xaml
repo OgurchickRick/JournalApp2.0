@@ -12,8 +12,9 @@
     <Grid>
         <StackPanel>
             <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-            <Button Content="Выход" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding CloseApplicationCommand}"/>
-            <Button Content="Домашка" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding SwithToSecondWindowComand}"/>
+            <Button Margin="0 10" Content="Домашка 1" Command="{Binding SwithToSecondWindowComand}"/>
+            <Button Margin="0 10" Content="Домашка 2" Command="{Binding SwithToDsWindowComand}"/>
+            <Button Margin="0 10" Content="Выход" Command="{Binding CloseApplicationCommand}"/>
         </StackPanel>
     </Grid>
 </Window>
